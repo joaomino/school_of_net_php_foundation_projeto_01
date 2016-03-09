@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -2em;
+}
+.footer, .push {
+    height: 2em;
+}
+
+.footer {
+    text-align: center;
+    background: #ffdd8b;
+    padding-top: 4px;
+}
