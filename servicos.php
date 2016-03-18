@@ -1,7 +1,3 @@
-<?php require_once("head.php"); ?>
-
-<div class="wrapper">
-    <?php require_once("menu.php"); ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6">
@@ -15,7 +11,5 @@
         </div>
     </div>
     <div class="push"></div>
-</div>
 
-<?php require_once("footer.php"); ?>
 
