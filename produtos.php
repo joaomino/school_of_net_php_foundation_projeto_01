@@ -1,8 +1,3 @@
-<?php require_once("head.php"); ?>
-
-
-<div class="wrapper">
-    <?php require_once("menu.php"); ?>
     <div class="container">
         <div id="products" class="row list-group">
             <div class="item  col-xs-4 col-lg-4">
@@ -134,6 +129,4 @@
         </div>
     </div>
     <div class="push"></div>
-</div>
 
-<?php require_once("footer.php"); ?>
