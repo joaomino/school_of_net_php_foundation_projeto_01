@@ -1,8 +1,3 @@
-<?php require_once("head.php"); ?>
-
-<div class="wrapper">
-    <?php require_once("menu.php"); ?>
-
     <div class="container">
         <div class="row">
             <h1>A Empresa</h1>
@@ -23,5 +18,3 @@
     </div>
 
     <div class="push"></div>
-</div>
-<?php require_once("footer.php"); ?>
