@@ -1,6 +1,3 @@
-<div class="wrapper">
-    <?php require_once("menu.php"); ?>
-
     <div class="container">
         <div class="row">
             <h1>Home</h1>
@@ -17,4 +14,3 @@
         </div>
     </div>
     <div class="push"></div>
-</div>
