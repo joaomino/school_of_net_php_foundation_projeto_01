@@ -19,6 +19,11 @@
 				<li><a href="/produtos">Produtos</a></li>
 				<li><a href="/servicos">Serviços</a></li>
 				<li><a href="/contato">Contato</a></li>
+                  <li><form name="form1" method="post"action="searchresults.php">
+                          <input type="text" name="search" size="40">
+                          <input type="submit" name="Submit" value="Pesquisar">
+                      </form>
+                  </li>
 			</div><!-- /.navbar-collapse -->
 		 </div><!-- /.container-fluid -->
 </nav>
