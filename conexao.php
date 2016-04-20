@@ -32,14 +32,14 @@ function get_page($x){
 	};
 
 	$pagename = $x;
-	$sql = "SELECT page_content FROM pages WHERE page_name = :pagename";
+	$sql = "SELECT page_content FROM teste WHERE page_name = :pagename";
 	$stmt = $conexao->prepare($sql);
 	$stmt->bindValue("pagename", $pagename);
 	$stmt->execute();
 	$pages = $stmt->fetch(PDO::FETCH_ASSOC);
 
 	if($pages==""){
-		$sql = "SELECT page_content FROM pages WHERE page_name = '404'";
+		$sql = "SELECT page_content FROM teste WHERE page_name = '404'";
 		$stmt = $conexao->prepare($sql);
 		$stmt->execute();
 		$pages = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -53,7 +53,7 @@ function get_head(){
 
 	$conexao = conectaDB();
 
-	$sql = "SELECT page_content FROM pages WHERE page_name = 'head'";
+	$sql = "SELECT page_content FROM teste WHERE page_name = 'head'";
 	$stmt = $conexao->prepare($sql);
 	$stmt->execute();
 	$get_head = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ function get_menu(){
 
 	$conexao = conectaDB();
 
-	$sql = "SELECT page_content FROM pages WHERE page_name = 'menu'";
+	$sql = "SELECT page_content FROM teste WHERE page_name = 'menu'";
 	$stmt = $conexao->prepare($sql);
 	$stmt->execute();
 	$get_menu = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -77,7 +77,7 @@ function get_footer(){
 
 	$conexao = conectaDB();
 
-	$sql = "SELECT page_content FROM pages WHERE page_name = 'footer'";
+	$sql = "SELECT page_content FROM teste WHERE page_name = 'footer'";
 	$stmt = $conexao->prepare($sql);
 	$stmt->execute();
 	$get_footer = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -90,7 +90,7 @@ function search(){
 	$conexao = conectaDB();
 
 	$searchterm = '%' . $_POST['search'] . '%';
-	$sql = "SELECT * FROM pages WHERE page_name LIKE :searchterm OR page_content LIKE :searchterm";
+	$sql = "SELECT * FROM teste WHERE page_name LIKE :searchterm OR page_content LIKE :searchterm";
 	$stmt = $conexao->prepare($sql);
 	$stmt->bindValue("searchterm", $searchterm);
 	$stmt->execute();
