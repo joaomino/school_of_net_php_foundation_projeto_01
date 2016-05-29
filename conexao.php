@@ -36,17 +36,28 @@ function get_page($x){
 	$stmt = $conexao->prepare($sql);
 	$stmt->bindValue("pagename", $pagename);
 	$stmt->execute();
-	$pages = $stmt->fetch(PDO::FETCH_ASSOC);
+	$page = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	if($pages==""){
+	if($page==""){
 		$sql = "SELECT page_content FROM teste WHERE page_name = '404'";
 		$stmt = $conexao->prepare($sql);
 		$stmt->execute();
-		$pages = $stmt->fetch(PDO::FETCH_ASSOC);
+		$page = $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-	return $pages;
+	return $page;
+}
 
+function get_all_pages(){
+
+	$conexao = conectaDB();
+
+	$sql = "SELECT page_name FROM teste";
+	$stmt = $conexao->prepare($sql);
+	$stmt->execute();
+	$pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	return $pages;
 }
 
 function get_head(){
@@ -97,4 +108,41 @@ function search(){
 	$searchresult= $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	return $searchresult;
+}
+
+function atualiza($x, $y){
+
+	$conexao = conectaDB();
+
+	$page_name = $x;
+	$atualiza_conteudo = $y;
+	$sql = "UPDATE teste SET page_content = :atualiza_conteudo WHERE page_name = :page_name";
+	$stmt = $conexao->prepare($sql);
+	$stmt->bindValue("atualiza_conteudo", $atualiza_conteudo);
+	$stmt->bindValue("page_name", $page_name);
+	$stmt->execute();
+	
+	return true;
+}
+
+function verificaUsuario($usuario, $senha) {
+
+	$conexao = conectaDB();
+
+	$db_user = $usuario;
+	$db_pass = $senha;
+	$sql = "select * from usuarios where usuario=:usuario and senha=:senha";
+	$stmt = $conexao->prepare($sql);
+	$stmt->bindValue("usuario", $db_user);
+	$stmt->bindValue("senha", $db_pass);
+	$stmt->execute();
+	$verifica = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	if ($verifica == '') {
+		$resposta = 0;
+	} else {
+		$resposta = 1;
+	}
+
+	return $resposta;
 }

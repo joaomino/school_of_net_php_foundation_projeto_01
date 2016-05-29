@@ -1,2 +1,37 @@
+/* Menu */
+
+.navbar {
+    font-family: "Montserrat", sans-serif;
+}
+
+li form {
+    padding-top: 12px;
+
+}
+
+.admin_area {
+    font-size: 10px;
+    text-align: right;
+    padding-top: 20px;
+}
+/* Editor */
+.main {
+    margin-top: 50px;
+}
+
+form .btn {
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.btn.salvar{
+    transition: background 1s, color 0.5s;
+}
+
+.btn.salvar:hover {
+    color: #ffffff;
+    background: #4ed043;
+}
+
 .foto {width: 100%; padding-top: 25px;}
 
